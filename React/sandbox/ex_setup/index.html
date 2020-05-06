@@ -8,30 +8,35 @@
 
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 
 <body>
     <div id="root"></div>
-
-    <script type="text/babel">
-   
+    
+    <script type="text/babel">       
        
 
-        class App extends React.Component {
-            render() {
-                const person = {
-                   name: 'Daniel',
-                   lastName: 'Stonebuilt'
-               }; 
-               
+        class App extends React.Component
+        {
+            person = {
+                name: "Daniel",
+                lastName: "Stonebuilt"
+            }
+
+            handleClick(e) {
+               console.log(e.target);
+           }
+
+            render()
+            {
                 return (
                     <div>
                         <h1>DAS IST EIN TEST</h1>
-                        <p>Welcome {this.person.name + this.person.lastName}!</p>
+                        <p>Welcome { this.person.name } { this.person.lastName }</p>
+                        <button onClick={ this.handleClick }>Click Me</button>
                     </div>
-
-                );
+                )
             }
         }
 
